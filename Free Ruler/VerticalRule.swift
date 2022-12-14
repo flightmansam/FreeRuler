@@ -36,7 +36,7 @@ class VerticalRule: RuleView {
         let mediumTicks: Int
         let smallTicks: Int
         let tinyTicks: Int?
-        
+
         switch prefs.unit {
         case .millimeters:
             tickScale = screen?.dpmm.width ?? NSScreen.defaultDpmm
@@ -76,8 +76,14 @@ class VerticalRule: RuleView {
 
         // substract two so ticks don't overlap with border
         // substract from this range so we can use the height var for position calculations
-        for i in 1...Int((height - 2) / tickScale) {
-            let pos = CGFloat(i) * tickScale
+        for tick in 1...Int((height - 2) / tickScale) {
+            let pos = CGFloat(tick) * tickScale
+            let i: Int;
+            if (getReferencePoint() != nil){
+                i = Int(round(relativeY(mouseTickY: pos) / tickScale))
+            } else {
+                i = tick;
+            }
             if i.isMultiple(of: largeTicks) {
                 path.move(to: CGPoint(x: width - 1, y: height - pos))
                 path.line(to: CGPoint(x: width - 10, y: height - pos))
@@ -135,6 +141,15 @@ class VerticalRule: RuleView {
         self.mouseTickY = mouseY - windowY
     }
 
+    func relativeY(mouseTickY: CGFloat) -> CGFloat {
+        if let refLoc = getReferencePoint() {
+            let windowY = self.window?.frame.origin.y ?? 0
+            let correction = -(refLoc.y - windowY - windowHeight)
+            return mouseTickY - correction
+        }
+        return mouseTickY
+    }
+
     func drawMouseTick(_ mouseTickY: CGFloat) {
         let mouseTick = NSBezierPath()
         let width: CGFloat = 40
@@ -145,7 +160,13 @@ class VerticalRule: RuleView {
 
         mouseTick.transform(using: transformer)
 
-        color.mouseTick.setStroke()
+        if (getReferencePoint() != nil){
+            color.mouseTickRelative.setStroke()
+        } else {
+            color.mouseTick.setStroke()
+        }
+        mouseTick.lineWidth = CGFloat(2.0)
+        
         mouseTick.stroke()
     }
 
@@ -163,12 +184,12 @@ class VerticalRule: RuleView {
             NSAttributedString.Key.foregroundColor: color.mouseNumber,
         ]
 
-        let mouseNumber = self.getMouseNumberLabel(number)
+        let mouseNumber = self.getMouseNumberLabel(relativeY(mouseTickY: number))
         let label = NSAttributedString(string: mouseNumber, attributes: attributes)
         let labelSize = label.size()
 
         // manually offsetting bottom position til i can figure out how to center text vertically in the label rect
-        let bottomPosition = number + 1;
+        let bottomPosition = number + labelOffset;
         let topPosition = number - labelOffset - labelSize.height
         let enoughRoomToTheBottom = bottomPosition + labelSize.height < height - labelOffset
         let labelY = enoughRoomToTheBottom ? bottomPosition : topPosition
