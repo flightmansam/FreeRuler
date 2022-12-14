@@ -67,8 +67,14 @@ class HorizontalRule: RuleView {
 
         // substract two so ticks don't overlap with border
         // subtract from this range so width var is accurate
-        for i in 1...Int((width - 2) / tickScale) {
-            let pos = CGFloat(i) * tickScale
+        for tick in 1...Int((width - 2) / tickScale) {
+            let pos = CGFloat(tick) * tickScale
+            let i: Int;
+            if (getReferencePoint() != nil){
+                i = Int(round(relativeX(mouseTickX: pos) / tickScale))
+            } else {
+                i = tick;
+            }
             if i.isMultiple(of: largeTicks) {
                 path.move(to: CGPoint(x: pos, y: 1))
                 path.line(to: CGPoint(x: pos, y: 10))
@@ -140,7 +146,13 @@ class HorizontalRule: RuleView {
 
         mouseTick.transform(using: transformer)
 
-        color.mouseTick.setStroke()
+        if (getReferencePoint() != nil){
+            color.mouseTickRelative.setStroke()
+        } else {
+            color.mouseTick.setStroke()
+        }
+        mouseTick.lineWidth = CGFloat(2.0)
+        
         mouseTick.stroke()
     }
 
