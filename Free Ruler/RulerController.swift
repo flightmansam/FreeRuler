@@ -249,6 +249,7 @@ extension RulerController {
         // print(ruler.orientation, "onKeyDown")
 
         let shift = event.modifierFlags.contains(.shift)
+        let cmd = event.modifierFlags.contains(.command)
 
         switch Int(event.keyCode) {
         case kVK_LeftArrow:
@@ -266,6 +267,16 @@ extension RulerController {
         case 47: // "."
             rulerWindow.rule.flipReferencePoint(location: NSEvent.mouseLocation)
             otherWindow?.rule.flipReferencePoint(location: NSEvent.mouseLocation)
+            return nil
+        case kVK_ANSI_C:
+            if (cmd) {
+                let x = rulerWindow.rule.currentXString
+                let y = otherWindow?.rule.currentYString ?? ""
+                
+                let pasteBoard = NSPasteboard.general
+                pasteBoard.clearContents()
+                pasteBoard.setString(x+", "+y, forType: .string)
+            }
             return nil
         default:
             return event

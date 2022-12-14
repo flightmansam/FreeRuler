@@ -9,6 +9,7 @@ A ruler application for Mac OS X. Forked from pascalapp/FreeRuler with some chan
 - Horizontal and vertical rulers.
 - Choose from units: pixels, millimeters, inches, or ratio (press U to cycle).
 - Choose relative measurements or from origin (press "." to toggle). (pr/rudifa/104)
+- Copy current mouse position of ruler tp clipboard (press command + c).
 - Float rulers above other applications (press F to toggle).
 - Move windows independently or as a group (press G to toggle).
 - Show or hide the shadow behind rulers (press S to toggle).

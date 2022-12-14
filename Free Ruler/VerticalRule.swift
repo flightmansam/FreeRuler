@@ -141,14 +141,6 @@ class VerticalRule: RuleView {
         self.mouseTickY = mouseY - windowY
     }
 
-    func relativeY(mouseTickY: CGFloat) -> CGFloat {
-        if let refLoc = getReferencePoint() {
-            let windowY = self.window?.frame.origin.y ?? 0
-            let correction = -(refLoc.y - windowY - windowHeight)
-            return mouseTickY - correction
-        }
-        return mouseTickY
-    }
 
     func drawMouseTick(_ mouseTickY: CGFloat) {
         let mouseTick = NSBezierPath()
@@ -185,6 +177,7 @@ class VerticalRule: RuleView {
         ]
 
         let mouseNumber = self.getMouseNumberLabel(relativeY(mouseTickY: number))
+        currentYString = mouseNumber;
         let label = NSAttributedString(string: mouseNumber, attributes: attributes)
         let labelSize = label.size()
 

@@ -20,6 +20,9 @@ class RuleView: NSView {
         .activeAlways,
         .inVisibleRect,
     ]
+    
+    var currentXString = String()
+    var currentYString = String()
 
     private var referencePoint: NSPoint?
 
@@ -39,6 +42,24 @@ class RuleView: NSView {
 
     func getReferencePoint() -> NSPoint? {
         return referencePoint
+    }
+    
+    func relativeY(mouseTickY: CGFloat) -> CGFloat {
+        if let refLoc = getReferencePoint() {
+            let windowY = self.window?.frame.origin.y ?? 0
+            let correction = -(refLoc.y - windowY - windowHeight)
+            return mouseTickY - correction
+        }
+        return mouseTickY
+    }
+    
+    func relativeX(mouseTickX: CGFloat) -> CGFloat {
+        if let refLoc = getReferencePoint() {
+            let windowX = self.window?.frame.origin.x ?? 0
+            let correction = refLoc.x - windowX
+            return mouseTickX - correction
+        }
+        return mouseTickX
     }
 
     override func updateTrackingAreas() {
