@@ -17,6 +17,7 @@ let prefs = Prefs.shared
     case pixels
     case millimeters
     case inches
+    case ratio
 }
 
 class Prefs: NSObject {

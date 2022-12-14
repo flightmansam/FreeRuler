@@ -51,6 +51,13 @@ class HorizontalRule: RuleView {
             mediumTicks = 8
             smallTicks = 4
             tinyTicks = 1
+        case .ratio:
+            tickScale = (width-2) / 100
+            textScale = 100
+            largeTicks = 50
+            mediumTicks = (width < 60) ? 0 : 10
+            smallTicks = (width < 300) ? 0 : 1
+            tinyTicks = nil
         default:
             tickScale = 1
             textScale = 1
@@ -73,7 +80,12 @@ class HorizontalRule: RuleView {
                 path.move(to: CGPoint(x: pos, y: 1))
                 path.line(to: CGPoint(x: pos, y: 10))
 
-                let label = String(i / textScale)
+                let label: String;
+                if prefs.unit == .ratio{
+                   label = String(Float(i) / Float(textScale))
+                } else {
+                    label = String(i / textScale)
+                }
                 let labelX: CGFloat = pos - (labelWidth / 2) + 0.5 // half-pixel nudge /shrug
                 let labelY: CGFloat = labelOffset
                 let labelRect = CGRect(x: labelX, y: labelY, width: labelWidth, height: labelHeight)

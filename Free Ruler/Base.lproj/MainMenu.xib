@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -156,7 +156,13 @@
                             <menuItem title="Inches" id="lt1-Hj-2TR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="setUnitInches:" target="Voe-Tx-rLC" id="Apf-6P-Oz8"/>
+                                    <action selector="setUnitInches:" target="Voe-Tx-rLC" id="JxN-uW-jqb"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Ratio" id="KDC-cG-2cP">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="setUnitRatio:" target="Voe-Tx-rLC" id="J9Y-A6-1Bb"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="tK2-3l-lAd"/>

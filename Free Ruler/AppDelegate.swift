@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var pixelsMenuItem: NSMenuItem!
     @IBOutlet weak var millimetersMenuItem: NSMenuItem!
     @IBOutlet weak var inchesMenuItem: NSMenuItem!
+    @IBOutlet weak var ratioMenuItem: NSMenuItem!
     @IBOutlet weak var cycleUnitsMenuItem: NSMenuItem!
 
     @IBOutlet weak var floatRulersMenuItem: NSMenuItem!
@@ -73,6 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         pixelsMenuItem?.state      = prefs.unit == .pixels ? .on : .off
         millimetersMenuItem?.state = prefs.unit == .millimeters ? .on : .off
         inchesMenuItem?.state      = prefs.unit == .inches ? .on : .off
+        ratioMenuItem?.state      = prefs.unit == .inches ? .on : .off
     }
 
     func redrawRulers() {
@@ -138,6 +140,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func setUnitInches(_ sender: Any) {
         prefs.unit = .inches
     }
+    @IBAction func setUnitRatio(_ sender: Any) {
+        prefs.unit = .ratio
+    }
     @IBAction func cycleUnits(_ sender: Any) {
         switch prefs.unit {
         case .pixels:
@@ -145,6 +150,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         case .millimeters:
             prefs.unit = .inches
         case .inches:
+            prefs.unit = .ratio
+        case .ratio:
             prefs.unit = .pixels
         }
     }

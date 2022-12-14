@@ -78,9 +78,9 @@ func getDefaultContentRect(orientation: Orientation) -> NSRect {
 func getMinSize(ruler: Ruler) -> NSSize {
     switch ruler.orientation {
     case .horizontal:
-        return NSSize(width: 200, height: 40)
+        return NSSize(width: 40, height: 40)
     case .vertical:
-        return NSSize(width: 40, height: 200)
+        return NSSize(width: 40, height: 40)
     }
 }
 

@@ -52,6 +52,13 @@ class VerticalRule: RuleView {
             mediumTicks = 8
             smallTicks = 4
             tinyTicks = 1
+        case .ratio:
+            tickScale = (height-2) / 100
+            textScale = 100
+            largeTicks = 50
+            mediumTicks = (height < 60) ? 0 : 10
+            smallTicks = (height < 300) ? 0 : 1
+            tinyTicks = nil
         default:
             tickScale = 1
             textScale = 1
@@ -75,7 +82,12 @@ class VerticalRule: RuleView {
                 path.move(to: CGPoint(x: width - 1, y: height - pos))
                 path.line(to: CGPoint(x: width - 10, y: height - pos))
 
-                let label = String(i / textScale)
+                let label: String;
+                if prefs.unit == .ratio{
+                   label = String(Float(i) / Float(textScale))
+                } else {
+                    label = String(i / textScale)
+                }
                 let labelX = width - labelWidth - labelOffset
                 let labelY = height - pos - (textHeight / 2)
                 let labelRect = CGRect(x: labelX, y: labelY, width: labelWidth, height: labelHeight)
