@@ -165,7 +165,7 @@ class VerticalRule: RuleView {
     func drawMouseNumber(_ mouseTickY: CGFloat) {
         let height = self.frame.height
         let number = height - mouseTickY
-        let labelOffset: CGFloat = 2
+        let labelOffset: CGFloat = 5
 
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .left
@@ -187,7 +187,7 @@ class VerticalRule: RuleView {
         let enoughRoomToTheBottom = bottomPosition + labelSize.height < height - labelOffset
         let labelY = enoughRoomToTheBottom ? bottomPosition : topPosition
 
-        let labelRect = CGRect(x: 7, y: height - (labelY + labelSize.height), width: 30, height: 15)
+        let labelRect = CGRect(x: 7, y: height - (labelY + labelSize.height), width: (prefs.unit == .ratio) ? 30: 22, height: 15)
         color.fill.setFill()
         labelRect.fill()
 

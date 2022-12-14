@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6F4102842260712F00F06A10"
-               BuildableName = "Free Ruler.app"
-               BlueprintName = "Free Ruler"
-               ReferencedContainer = "container:Free Ruler.xcodeproj">
+               BuildableName = "Ruler.app"
+               BlueprintName = "Ruler"
+               ReferencedContainer = "container:Ruler.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6F4102842260712F00F06A10"
-            BuildableName = "Free Ruler.app"
-            BlueprintName = "Free Ruler"
-            ReferencedContainer = "container:Free Ruler.xcodeproj">
+            BuildableName = "Ruler.app"
+            BlueprintName = "Ruler"
+            ReferencedContainer = "container:Ruler.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -54,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6F4102842260712F00F06A10"
-            BuildableName = "Free Ruler.app"
-            BlueprintName = "Free Ruler"
-            ReferencedContainer = "container:Free Ruler.xcodeproj">
+            BuildableName = "Ruler.app"
+            BlueprintName = "Ruler"
+            ReferencedContainer = "container:Ruler.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>

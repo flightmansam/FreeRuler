@@ -61,7 +61,7 @@
 		50FC527D25BF326800B84228 /* FreeRuler.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FreeRuler.help; sourceTree = "<group>"; };
 		53AF6A4225A456E30076AAB7 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		53AF6A4325A456E30076AAB7 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/PreferencesController.strings; sourceTree = "<group>"; };
-		6F4102852260712F00F06A10 /* Free Ruler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Free Ruler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F4102852260712F00F06A10 /* Ruler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F4102882260712F00F06A10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F41028D2260713100F06A10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6F41028F2260713100F06A10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		6F4102862260712F00F06A10 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6F4102852260712F00F06A10 /* Free Ruler.app */,
+				6F4102852260712F00F06A10 /* Ruler.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,9 +128,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6F4102842260712F00F06A10 /* Free Ruler */ = {
+		6F4102842260712F00F06A10 /* Ruler */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6F4102932260713100F06A10 /* Build configuration list for PBXNativeTarget "Free Ruler" */;
+			buildConfigurationList = 6F4102932260713100F06A10 /* Build configuration list for PBXNativeTarget "Ruler" */;
 			buildPhases = (
 				6F4102812260712F00F06A10 /* Sources */,
 				6F4102822260712F00F06A10 /* Frameworks */,
@@ -142,9 +142,9 @@
 			);
 			dependencies = (
 			);
-			name = "Free Ruler";
+			name = Ruler;
 			productName = "Free Ruler";
-			productReference = 6F4102852260712F00F06A10 /* Free Ruler.app */;
+			productReference = 6F4102852260712F00F06A10 /* Ruler.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -155,14 +155,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1200;
-				ORGANIZATIONNAME = "Free Ruler";
+				ORGANIZATIONNAME = Ruler;
 				TargetAttributes = {
 					6F4102842260712F00F06A10 = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
 			};
-			buildConfigurationList = 6F4102802260712F00F06A10 /* Build configuration list for PBXProject "Free Ruler" */;
+			buildConfigurationList = 6F4102802260712F00F06A10 /* Build configuration list for PBXProject "Ruler" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -177,7 +177,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6F4102842260712F00F06A10 /* Free Ruler */,
+				6F4102842260712F00F06A10 /* Ruler */,
 			);
 		};
 /* End PBXProject section */
@@ -380,6 +380,7 @@
 					"@loader_path/../Frameworks",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 2.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pascal.freeruler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,6 +405,7 @@
 					"@loader_path/../Frameworks",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 2.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pascal.freeruler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,7 +416,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6F4102802260712F00F06A10 /* Build configuration list for PBXProject "Free Ruler" */ = {
+		6F4102802260712F00F06A10 /* Build configuration list for PBXProject "Ruler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6F4102912260713100F06A10 /* Debug */,
@@ -423,7 +425,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6F4102932260713100F06A10 /* Build configuration list for PBXNativeTarget "Free Ruler" */ = {
+		6F4102932260713100F06A10 /* Build configuration list for PBXNativeTarget "Ruler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6F4102942260713100F06A10 /* Debug */,
