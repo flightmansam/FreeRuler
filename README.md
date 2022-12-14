@@ -1,13 +1,14 @@
 # Free Ruler
 
-A ruler application for Mac OS X
+A ruler application for Mac OS X. Forked from pascalapp/FreeRuler with some changes (see commits).
 
 ![icon_512x512](https://user-images.githubusercontent.com/1355312/57780292-f0c4b880-76f5-11e9-8933-36ab3bfccb14.png)
 
 ### Features
 
 - Horizontal and vertical rulers.
-- Choose from units: pixels, millimeters, or inches (press U to cycle).
+- Choose from units: pixels, millimeters, inches, or ratio (press U to cycle).
+- Choose relative measurements or from origin (press "." to toggle). (pr/rudifa/104)
 - Float rulers above other applications (press F to toggle).
 - Move windows independently or as a group (press G to toggle).
 - Show or hide the shadow behind rulers (press S to toggle).
