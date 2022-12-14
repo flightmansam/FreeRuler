@@ -93,6 +93,12 @@ class RuleView: NSView {
             return "mm"
         case .inches:
             return "in"
+        case .ratio:
+            if frame.height > frame.width {
+                return "y:1.0";
+            } else {
+                return "x:1.0";
+            }
         }
     }
 
@@ -104,6 +110,13 @@ class RuleView: NSView {
             return String(format: "%.1f", number / (screen?.dpmm.width ?? NSScreen.defaultDpmm))
         case .inches:
             return String(format: "%.3f", number / (screen?.dpi.width ?? NSScreen.defaultDpi))
+        case .ratio:
+            if frame.height > frame.width {
+                return String(format: "%.2f", number/frame.height);
+            } else {
+                return String(format: "%.2f", number/frame.width);
+            }
+            
         }
     }
 
