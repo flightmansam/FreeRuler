@@ -112,9 +112,9 @@ class RuleView: NSView {
             return String(format: "%.3f", number / (screen?.dpi.width ?? NSScreen.defaultDpi))
         case .ratio:
             if frame.height > frame.width {
-                return String(format: "%.2f", number/frame.height);
+                return String(format: "%.3f", number/frame.height);
             } else {
-                return String(format: "%.2f", number/frame.width);
+                return String(format: "%.3f", number/frame.width);
             }
             
         }
